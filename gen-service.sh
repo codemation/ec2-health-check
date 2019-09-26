@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo '#!/bin/bash' > /usr/local/bin/ec2-healthz
-echo  $(which python3)' '$(pwd)"/webapp/server.py" >> /usr/local/bin/ec2-healthz
+echo  $(which python3)' '$(pwd)"/ec2-health-check/webapp/server.py" >> /usr/local/bin/ec2-healthz
 chmod +x /usr/local/bin/ec2-healthz
 
 cat <<EOF | sudo tee /etc/systemd/system/ec2-healthcheck.service
